@@ -59,7 +59,7 @@ int main(void)
 #include<stdlib.h>
 #include<time.h>
 #define RESPONSES_SIZE 40 //array的尺寸
-#define FREQUENCY_SIZE 11 
+#define FREQUENCY_SIZE 11  //frequence[0]不使用
 
 int main(void)
 {
