@@ -74,23 +74,23 @@ int main(void)
     }
 
     // 顯示所有顧客的評分
-    for(int i = 0; i < RESPONSES_SIZE; i++)
-    printf("cousomer %d's rating is %d\n", i+1 ,responses[i]);
-
+    for (int i = 0; i < RESPONSES_SIZE; i++)
+        printf("cousomer %d's rating is %d\n", i + 1, responses[i]);
+    /*
     // 計算每個評分出現的次數:較進階的寫法
        //從response陣列中一次取出一個回應,將frequency陣列中的10個計數器(frquency[1]、frquency[2]、...、frquency[10])中的某一個增加1
     for (size_t answer = 0; answer < RESPONSES_SIZE; answer++)
     {
         ++frequency[responses[answer]];  //根據response[answer]的值來遞增適當的frquency計數器
     }
-
+    */
     // 計算每個評分出現的次數:較平易近人的寫法
     for (size_t i = 0; i < RESPONSES_SIZE; i++)
     {
         int rating = responses[i]; // 取得當前評分 (1~10)
         frequency[rating] = frequency[rating] + 1; // 增加對應的計數器
     }
-
+    
     //顯示評分統計
     printf("%s%17s\n", "Rating", "Frquency");
 
