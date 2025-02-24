@@ -67,10 +67,13 @@ int main(void)
     //int responses[RESPONSES_SIZE] = { 1 + rand() % 10 }; //在 C 語言中，陣列的初始化只能在宣告時指定固定的值，不能直接用 rand() 給定每個元素的隨機值。
     int responses[RESPONSES_SIZE];
     srand(time(NULL));
+
+    // 產生隨機評分 (1~10)
     for (int i = 0; i < RESPONSES_SIZE; i++) {
         responses[i] = 1 + rand() % 10;
     }
 
+    // 顯示所有顧客的評分
     for(int i = 0; i < RESPONSES_SIZE; i++)
     printf("cousomer %d's rating is %d\n", i+1 ,responses[i]);
 
