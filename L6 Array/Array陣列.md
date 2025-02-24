@@ -71,12 +71,13 @@ int main(void)
         responses[i] = 1 + rand() % 10;
     }
 
-    for(int i = 0; i <RESPONSES_SIZE; i++)
+    for(int i = 0; i < RESPONSES_SIZE; i++)
     printf("cousomer %d's rating is %d\n", i+1 ,responses[i]);
 
+    //從response陣列中一次取出一個回應,將frequency陣列中的10個計數器(frquency[1]、frquency[2]、...、frquency[10])中的某一個增加1
     for (size_t answer = 0; answer < RESPONSES_SIZE; answer++)
     {
-        ++frequency[responses[answer]];
+        ++frequency[responses[answer]];  //根據response[answer]的值來遞增適當的frquency計數器
     }
     printf("%s%17s\n", "Rating", "Frquency");
 
