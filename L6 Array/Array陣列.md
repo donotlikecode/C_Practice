@@ -43,11 +43,46 @@ int main(void)
         s[j] = 2 + 2 * j;
     }
     
-    printf("%s%13s\n", "Element", "Value");
+    printf("%s%13s\n", "Element", "Value");  //%13s(在這裡指的是Value)代表最少占 13 個字元寬度，若字串長度不足，會在左側補空格
 
     for (size_t j = 0; j < SIZE; ++j) {
         printf("%7u%13d\n", j, s[j]);
     }
 }
 
+```
+
+**EX6-3array的典型應用:分析整理某項調查中收集的資料**
+要求40位學生對自助餐廳的食物打分數,分數為1~10分(1是差,10是棒棒)
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#define RESPONSES_SIZE 40 //array的尺寸
+#define FREQUENCY_SIZE 11 
+
+int main(void)
+{
+    int frequency[FREQUENCY_SIZE] = { 0 };//全部都會被設為0,
+    //int responses[RESPONSES_SIZE] = { 1 + rand() % 10 }; //在 C 語言中，陣列的初始化只能在宣告時指定固定的值，不能直接用 rand() 給定每個元素的隨機值。
+    int responses[RESPONSES_SIZE];
+    srand(time(NULL));
+    for (int i = 0; i < RESPONSES_SIZE; i++) {
+        responses[i] = 1 + rand() % 10;
+    }
+
+    for(int i = 0; i <RESPONSES_SIZE; i++)
+    printf("cousomer %d's rating is %d\n", i+1 ,responses[i]);
+
+    for (size_t answer = 0; answer < RESPONSES_SIZE; answer++)
+    {
+        ++frequency[responses[answer]];
+    }
+    printf("%s%17s\n", "Rating", "Frquency");
+
+    for (size_t rating = 1; rating < FREQUENCY_SIZE; rating++)
+    {
+        printf("%6d%17d\n", rating, frequency[rating]);
+    }
+}
 ```
