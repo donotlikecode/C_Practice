@@ -12,13 +12,16 @@ int main()
     //只能在宣告的時候給值 如果已經給名稱沒有宣告裡面的東西 就只能用迴圈去用
     int a[5] = { 1, 3, 5, 7, 9 }; //多一個compiler就不給過了
     int b[] = { 2, 4, 6, 8, 10, 12 };
-    for (int i = 0; i < 5; i++) {
+    int sum = 0;
+    for (int i = 0 ,sum_i = 0; i < 5; i++) {
+        sum_i = a[i];
+        sum = sum + sum_i;
         printf("a%i=%i\n", i, a[i]);
         printf("b%i=%i\n", i, b[i]);
-        printf("%d",a[0] + a[1] + a[2]);
+        printf("sum to ith element = %d", sum);
         puts("");
     }
-
+    printf("a[0]+a[1]+a[2]=%d\n", a[0] + a[1] + a[2]);
     //
     char c1[] = "first";
     char c2[] = { 's', 'e', 'c', 'o', 'n', 'd', '\0' };
@@ -26,5 +29,4 @@ int main()
     printf("c2=%s\n", c2);
 
 }
-
 ```
