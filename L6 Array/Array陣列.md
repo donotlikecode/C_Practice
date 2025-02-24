@@ -10,12 +10,11 @@ int main()
 {
     //兩種initialization array的方法
     //只能在宣告的時候給值 如果已經給名稱沒有宣告裡面的東西 就只能用迴圈去用
-    int a[5] = { 1, 3, 5, 7, 9 }; //多一個compiler就不給過了
+    int a[5] = { 1, 3, 5, 7, 9 }; //多一個compiler就不給過了,電腦會幫陣列a預留5個元素的位置
     int b[] = { 2, 4, 6, 8, 10, 12 };
     int sum = 0;
-    for (int i = 0 ,sum_i = 0; i < 5; i++) {
-        sum_i = a[i];
-        sum = sum + sum_i;
+    for (int i = 0 ; i < 5; i++) {
+        sum = sum + a[i];
         printf("a%i=%i\n", i, a[i]);
         printf("b%i=%i\n", i, b[i]);
         printf("sum to ith element = %d", sum);
@@ -29,4 +28,26 @@ int main()
     printf("c2=%s\n", c2);
 
 }
+```
+**EX6-2用計算初始化array與#Define前置處理器**
+```
+#include<stdio.h>
+#define SIZE 5 //array的最大尺寸
+
+int main(void)
+{
+    int s[SIZE]; //陣列s有SIZE個元素
+
+    for (size_t j = 0; j < SIZE; ++j) //size_t 為一個資料型別,一個unsigned int,這個型別建議用來表示陣列大小與index的變數
+    {
+        s[j] = 2 + 2 * j;
+    }
+    
+    printf("%s%13s\n", "Element", "Value");
+
+    for (size_t j = 0; j < SIZE; ++j) {
+        printf("%7u%13d\n", j, s[j]);
+    }
+}
+
 ```
