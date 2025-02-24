@@ -30,7 +30,7 @@ int main()
 }
 ```
 **EX6-2用計算初始化array與#Define前置處理器**
-```
+```c
 #include<stdio.h>
 #define SIZE 5 //array的最大尺寸
 
